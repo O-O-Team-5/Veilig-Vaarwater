@@ -10,8 +10,8 @@ public class WelcomeScript : MonoBehaviour
     public float delay;
     public bool nl = true;
     public TextMeshProUGUI welcomeText;
-    
-    public LanguageScript languageScript;
+
+    public LanguageManager languageManager;
     public string language;
     public bool pressed;
 
@@ -21,8 +21,8 @@ public class WelcomeScript : MonoBehaviour
     }
     void Update() 
     {
-        pressed = languageScript.pressed;
-        language = languageScript.language;
+        pressed = languageManager.pressed;
+        language = languageManager.language;
 
         if (nl && !pressed) 
         {
