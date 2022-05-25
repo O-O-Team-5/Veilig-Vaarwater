@@ -26,16 +26,20 @@ public class TextManager : MonoBehaviour
     
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dateText;
+    public TextMeshProUGUI welcomeText;
 
     public string[] textNL;
     public string[] textENG;
     public string[] textDU; 
     public string[] textFR;
 
+    public string[] welcomes;
+
     public bool pressed = false;
     
     void Update() 
     {
+        language = languageManager.language;
         LanguageVoid();
         TimeVoid();
     }
@@ -44,15 +48,19 @@ public class TextManager : MonoBehaviour
     {
         if (language == "NL")
         {
+            welcomeText.text = welcomes[0];
         }
         else if (language == "ENG") 
-        {      
+        {  
+            welcomeText.text = welcomes[1];    
         }
         else if (language == "DU") 
-        {           
+        { 
+            welcomeText.text = welcomes[2];          
         }
         else if (language == "FR") 
-        {            
+        {
+            welcomeText.text = welcomes[3];            
         }
     }
 

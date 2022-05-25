@@ -6,6 +6,9 @@ public class LanguageManager : MonoBehaviour
 {
     public string language = "NL";
     public bool pressed = false;
+    public bool nl = true;
+    public float delay;
+
 
     public void NL() 
     {
@@ -29,5 +32,27 @@ public class LanguageManager : MonoBehaviour
     {
         pressed = true;
         language = "FR";
+    }
+
+    void Update () 
+    {
+        if (nl && !pressed) 
+        {
+            nl = false;
+            StartCoroutine(changeLanguage());
+        }
+    }
+
+    IEnumerator changeLanguage() 
+    {
+        yield return new WaitForSeconds(delay);
+        language = "ENG";
+        yield return new WaitForSeconds(delay);
+        language = "DU";
+        yield return new WaitForSeconds(delay);
+        language = "FR";
+        yield return new WaitForSeconds(delay);
+        language = "NL";
+        nl = true;
     }
 }
