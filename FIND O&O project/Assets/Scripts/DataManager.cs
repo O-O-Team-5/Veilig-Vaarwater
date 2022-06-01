@@ -13,6 +13,8 @@ public class DataManager : MonoBehaviour
     public int month;
     public int year;
     public string time;
+
+    public bool home = true;
     
     void Update() 
     {
@@ -30,4 +32,16 @@ public class DataManager : MonoBehaviour
 
         time = "" + hour + ":" + minutes;      
     }
+
+    public void ToggleHome() 
+    {
+        if(home) 
+        {
+            home = false;
+        } 
+        else 
+        {
+            home = true;
+        }
+    } 
 }

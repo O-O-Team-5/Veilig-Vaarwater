@@ -9,6 +9,9 @@ public class LanguageManager : MonoBehaviour
     public bool nl = true;
     public float delay;
 
+    public bool home = true;
+
+    public DataManager dataManager;
 
     public void NL() 
     {
@@ -36,11 +39,13 @@ public class LanguageManager : MonoBehaviour
 
     void Update () 
     {
-        if (nl && !pressed) 
+        if (nl && !pressed && !home) 
         {
             nl = false;
             StartCoroutine(changeLanguage());
         }
+
+        home = dataManager.home;
     }
 
     IEnumerator changeLanguage() 
