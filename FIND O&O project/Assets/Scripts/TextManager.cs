@@ -28,10 +28,10 @@ public class TextManager : MonoBehaviour
     public TextMeshProUGUI dateText;
     public TextMeshProUGUI welcomeText;
 
-    public string[] textNL;
-    public string[] textENG;
-    public string[] textDU; 
-    public string[] textFR;
+    public string[] weerTextNL;
+    public string[] weerTextENG;
+    public string[] weerTextDU; 
+    public string[] weerTextFR;
 
     public string[] welcomes;
 
