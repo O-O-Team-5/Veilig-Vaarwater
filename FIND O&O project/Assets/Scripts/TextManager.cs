@@ -18,7 +18,6 @@ public class TextManager : MonoBehaviour
     public int year;
     public string monthString;
     public string date;
-
     public string[] monthNL;
     public string[] monthENG;
     public string[] monthDU;
@@ -26,14 +25,46 @@ public class TextManager : MonoBehaviour
     
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dateText;
-    public TextMeshProUGUI welcomeText;
+    
+    //weather
+    public string[] weatherNL;
+    public string[] weatherENG;
+    public string[] weatherDU; 
+    public string[] weatherFR;
+    public TextMeshProUGUI[] weatherText;
+    public int totalWeatherText;
 
-    public string[] weerTextNL;
-    public string[] weerTextENG;
-    public string[] weerTextDU; 
-    public string[] weerTextFR;
+    //Evenementen
+    public string[] eventNL;
+    public string[] eventENG;
+    public string[] eventDU;
+    public string[] eventFR;
+    public TextMeshProUGUI[] eventText;
+    public int totalEventText; 
+
+    //Waterveiligheid
+    
+    public string[] waterNL;
+    public string[] waterENG;
+    public string[] waterDU;
+    public string[] waterFR;
+    public TextMeshProUGUI[] waterText;
+    public int totalWaterText;
+
+    //OV
+
+    public string[] ovNL;
+    public string[] ovENG;
+    public string[] ovDU;
+    public string[] ovFR;
+    public TextMeshProUGUI[] ovText;
+    public int totalOvText; 
+
+
 
     public string[] welcomes;
+    public TextMeshProUGUI welcomeText;
+
 
     public bool pressed = false;
     
@@ -49,18 +80,88 @@ public class TextManager : MonoBehaviour
         if (language == "NL")
         {
             welcomeText.text = welcomes[0];
+
+            for (int i = 0; i < totalWeatherText; i++) 
+            {
+                weatherText[i].text = weatherNL[i];
+            }
+            for (int i = 0; i < totalEventText; i++) 
+            {
+                eventText[i].text = eventNL[i];
+            }
+            for (int i = 0; i < totalWaterText; i++) 
+            {
+                waterText[i].text = waterNL[i];
+            }
+            for (int i = 0; i < totalOvText; i++) 
+            {
+                ovText[i].text = ovNL[i];
+            }
         }
         else if (language == "ENG") 
         {  
-            welcomeText.text = welcomes[1];    
+            welcomeText.text = welcomes[1];
+            
+            for (int i = 0; i < totalWeatherText; i++) 
+            {
+                weatherText[i].text = weatherENG[i];
+            }
+            for (int i = 0; i < totalEventText; i++) 
+            {
+                eventText[i].text = eventENG[i];
+            }
+            for (int i = 0; i < totalWaterText; i++) 
+            {
+                waterText[i].text = waterENG[i];
+            }
+            for (int i = 0; i < totalOvText; i++) 
+            {
+                ovText[i].text = ovENG[i];
+            }
+            
         }
         else if (language == "DU") 
         { 
-            welcomeText.text = welcomes[2];          
+            welcomeText.text = welcomes[2]; 
+
+            for (int i = 0; i < totalWeatherText; i++) 
+            {
+                weatherText[i].text = weatherDU[i];
+            }
+            for (int i = 0; i < totalEventText; i++) 
+            {
+                eventText[i].text = eventDU[i];
+            }
+            for (int i = 0; i < totalWaterText; i++) 
+            {
+                waterText[i].text = waterDU[i];
+            }
+            for (int i = 0; i < totalOvText; i++) 
+            {
+                ovText[i].text = ovDU[i];
+            }
+              
         }
         else if (language == "FR") 
         {
-            welcomeText.text = welcomes[3];            
+            welcomeText.text = welcomes[3];
+
+            for (int i = 0; i < totalWeatherText; i++) 
+            {
+                weatherText[i].text = weatherFR[i];
+            }
+            for (int i = 0; i < totalEventText; i++) 
+            {
+                eventText[i].text = eventFR[i];
+            }
+            for (int i = 0; i < totalWaterText; i++) 
+            {
+                waterText[i].text = waterFR[i];
+            }
+            for (int i = 0; i < totalOvText; i++) 
+            {
+                ovText[i].text = ovFR[i];
+            }         
         }
     }
 
