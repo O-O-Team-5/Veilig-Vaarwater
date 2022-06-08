@@ -30,7 +30,15 @@ public class DataManager : MonoBehaviour
         month = System.DateTime.Now.Month;
         year = System.DateTime.Now.Year;
 
-        time = "" + hour + ":" + minutes;      
+        if (minutes < 10) 
+        {
+            time = "" + hour + ":0" + minutes;
+        }
+        else 
+        {
+            time = "" + hour + ":" + minutes;
+        }
+             
     }
 
     public void ToggleHome() 
