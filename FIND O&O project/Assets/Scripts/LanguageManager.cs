@@ -10,6 +10,7 @@ public class LanguageManager : MonoBehaviour
     public float delay;
 
     public bool home = true;
+    public bool loop = false;
 
     public DataManager dataManager;
 
@@ -39,7 +40,7 @@ public class LanguageManager : MonoBehaviour
 
     void Update () 
     {
-        if (nl && !pressed && !home) 
+        if (nl && !pressed && !home && loop) 
         {
             nl = false;
             StartCoroutine(changeLanguage());
